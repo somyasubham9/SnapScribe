@@ -1,0 +1,7 @@
+ @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.heading{
+    font-family: 'Dancing Script', cursive;
+    color: #3a86ff;
+    letter-spacing: 2px;
+}
