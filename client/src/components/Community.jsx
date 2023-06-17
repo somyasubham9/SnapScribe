@@ -1,6 +1,8 @@
 import React from "react";
 import community from "../assets/community.jpg";
+import {useNavigate} from 'react-router-dom'
 const Community = () => {
+  const nav=useNavigate();
   return (
     <section className="p-10 bg-[#FFFFFF] min-h-[50%] w-full flex justify-center items-center">
       <div className=" flex p-3 justify-evenly ">
@@ -22,7 +24,7 @@ const Community = () => {
             connect, inspire, and collaborate with like-minded individuals
             through sharing your generated images in our thriving community.
           </div>
-          <button className="w-fit text-white bg-gradient-to-b from-cyan-500 to-blue-500 py-2 px-4 rounded-md transition-opacity hover:scale-110 duration-300">
+          <button onClick={()=>nav('/community')} className="w-fit text-white bg-gradient-to-b from-cyan-500 to-blue-500 py-2 px-4 rounded-md transition-opacity hover:scale-110 duration-300">
             Community
           </button>
         </div>

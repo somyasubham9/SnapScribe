@@ -1,6 +1,8 @@
 import React from "react";
 import annotate from "../assets/annotate.jpg";
+import {useNavigate} from 'react-router-dom'
 const Captioning = () => {
+  const nav=useNavigate();
   return (
     <section className="p-10 bg-[#FFFFFF]  w-full flex justify-center items-center min-h-[50%]">
       <div className=" flex p-3 justify-evenly ">
@@ -17,7 +19,7 @@ const Captioning = () => {
             your images, enhancing user engagement. Unlock the potential of your
             visual content with our efficient image captioning feature.
           </div>
-          <button  className='w-fit text-white bg-gradient-to-b from-cyan-500 to-blue-500 py-2 px-4 rounded-md transition-opacity hover:scale-110 duration-300'>Annotate</button>
+          <button className='w-fit text-white bg-gradient-to-b from-cyan-500 to-blue-500 py-2 px-4 rounded-md transition-opacity hover:scale-110 duration-300' onClick={()=>{nav('/captivate')}}>Annotate</button>
         </div>
       </div>
     </section>

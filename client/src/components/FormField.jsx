@@ -8,8 +8,10 @@ const FormField = ({
   value,
   isSurpriseMe,
   handleSurpriseMe,
-  handleChange,
+  handleChange,readOnly
 }) => {
+  
+
   return (
     <div>
       <div className="flex items-center gap-2 mb-2">
@@ -30,6 +32,7 @@ const FormField = ({
         )}
       </div>
       <input
+      readOnly={readOnly}
         type={type}
         id={name}
         name={name}
@@ -37,7 +40,7 @@ const FormField = ({
         value={value}
         onChange={handleChange}
         required
-        className="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#4649ff] focus:border-[#4649ff] outline-none block w-full p-3"
+        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#4649ff] focus:border-[#4649ff] outline-none block w-full p-3"
       />
     </div>
   );
