@@ -7,8 +7,8 @@ import './Navbar.css'
 const Navbar = () => {
   const navigate=useNavigate();
   const handleScrollClick = async () => {
-    await navigate('/');
-    await window.scrollTo({
+     navigate('/');
+     window.scrollTo({
       top: document.documentElement.scrollHeight,
       behavior: "smooth",
     });
@@ -49,6 +49,12 @@ const Navbar = () => {
           className="font-inter font-medium  text-black px-4 py-2 rounded-md hover:bg-sky-300"
         >
           Community
+        </Link>
+        <Link
+          to="/about"
+          className="font-inter font-medium  text-black px-4 py-2 rounded-md hover:bg-sky-300"
+        >
+          About
         </Link>
         <button
           onClick={handleScrollClick}
