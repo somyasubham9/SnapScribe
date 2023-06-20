@@ -3,6 +3,8 @@ SnapScribe | The ultimate image captioning and image generation tool powered by 
 
 ![image](https://github.com/somyasubham9/SnapScribe/assets/77459972/8b935d38-9a74-4870-85db-58a27a07dc2e)
 
+![image](https://github.com/somyasubham9/SnapScribe/assets/77459972/02bad16d-81c7-4123-b314-7635182f562f)
+
 
 # TechStack Used :
 Client: ReactJS,TailwindCSS,React-Router
