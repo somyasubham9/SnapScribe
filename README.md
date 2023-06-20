@@ -1,7 +1,10 @@
 # SnapScribe
 SnapScribe | The ultimate image captioning and image generation tool powered by AI.
 
-![image](https://github.com/somyasubham9/SnapScribe/client/src/assets/SnapScribeHome)
+
+![SnapScribeHome](https://github.com/somyasubham9/SnapScribe/assets/77459972/e43da0e3-7401-4582-b4d5-f4ff0873881c)
+![SnapScribeFeat](https://github.com/somyasubham9/SnapScribe/assets/77459972/faa0feb7-1a1c-4477-b15d-c450b6ae4d94)
+
 
 # TechStack Used :
 Client: ReactJS,TailwindCSS,React-Router
