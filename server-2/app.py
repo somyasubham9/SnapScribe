@@ -11,9 +11,9 @@ from PIL import Image
 app = Flask(__name__)
 CORS(app)
 
-model = load_model('model.h5')
-featuremodel = load_model('featuremodel.h5')
-with open('tokenizer.pkl', 'rb') as f:
+model = load_model('models/model.h5')
+featuremodel = load_model('models/featuremodel.h5')
+with open('models/tokenizer.pkl', 'rb') as f:
     tokenizer = pickle.load(f)
 
 def idx_to_word(integer, tokenizer):
