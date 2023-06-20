@@ -6,26 +6,27 @@ import { FormField, Loader,Caption } from "../components";
 import axios from 'axios';
 import './CaptiVate.css';
 const CaptiVate = () => {
-  const [image, setImage] = useState(null);
-  const [annotation, setAnnotation] = useState('');
-  const [speechUrl, setSpeechUrl] = useState('');
-  const [prevfilefile, setPrevprevfilefile] = useState(null);
-  const [scanning, setScanning] = useState(false);
-  const [audioReady, setAudioReady] = useState(false);
+  
+  const [audioPlaying, setAudioPlaying] = useState(false);
+  const playAudio = () => {
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance();
+    utterance.text = form.prompt;
+    utterance.rate = 0.7;
+    utterance.pitch=1;
+    
+    setTimeout(() => {
+      synth.speak(utterance);
+    }, 500);
 
-  useEffect(() => {
-    if (audioReady) {
-      setScanning(false);
-    }
-  }, [audioReady]);
+    utterance.onstart = () => {
+      setAudioPlaying(true);
+    };
 
-
-
-  const handlePlaySpeech = () => {
-    const audio = new Audio(speechUrl);
-    audio.play();
+    utterance.onend = () => {
+      setAudioPlaying(false);
+    };
   };
-
   const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
@@ -100,19 +101,7 @@ const CaptiVate = () => {
   };
   const [prevfile,setPrevfile]=useState(null);
   const [selectedfile,setSelectedfile]=useState(null);
-  const [final,setFinal]=useState(null);
 
-    const setFileToBase= (file)=>{
-      const reader=new FileReader();
-      if(file){
-      reader.readAsDataURL(file);
-      const ans=reader.onloadend= ()=>{
-       
-        const picurl=reader.result;
-        console.log(picurl)
-      }
-    }
-    }
   const handleImageChange = async (event) => {
     const setFileToBase= (file)=>{
       const reader=new FileReader();
@@ -140,35 +129,7 @@ const CaptiVate = () => {
 
 
   return (
-    // <div className="container">
-    //   <h1 className="title text-6xl font-bold text-[#00ADFF]">Image Annotation and Speech</h1>
-    //   <div className="upload-container">
-    //     <label htmlFor="upload-input" className="upload-label">
-    //       Upload Your Image
-    //     </label>
-    //     <input
-
-    //         type="file"
-    //         id="upload-input"
-    //         accept="image/*"
-    //         onChange={handleImageChange}
-    //         hidden
-    //       />
-    //     {prevfilefile && (
-    //       <img src={prevfilefile} alt="Preview" className={`preview-image ${scanning ? 'scanning' : ''}`} />
-    //     )}
-    //   </div>
-    //   <button onClick={handleUpload} className="upload-button">
-    //     Scan Your Image
-    //   </button>
-    //   {annotation && <p className="annotation">Hello</p>}
-    //   {audioReady && (
-    //     <button onClick={handlePlaySpeech} className="play-button">
-    //       Play Speech
-    //     </button>
-    //   )}
-
-    // </div>
+  
 
     <section className="max-w-7xl mx-auto">
       <div >
@@ -230,6 +191,14 @@ const CaptiVate = () => {
           >
             {generatingText ? "Annotating..." : "Annotate"}
           </button>
+          {form.prompt && <button
+            className="text-white bg-[#e63946] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            type="button"
+            onClick={playAudio} 
+            disabled={!form.prompt || audioPlaying}
+          >
+            <span>&#9654;</span> Play
+          </button>}
 
         </div>
         

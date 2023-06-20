@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useRef} from "react";
+import {useNavigate } from "react-router-dom";
 import Captioning from "../components/Captioning";
 import Generating from "../components/Generating";
 import Community from "../components/Community";
@@ -7,6 +8,11 @@ import ScrollToTop from "../components/ScrollToTop";
 import body from "../assets/body.png";
 import "./HomePage.css";
 const HomePage = () => {
+  const navigate=useNavigate();
+  const ref = useRef(null);
+  const handleClick=()=>{
+    navigate('/captivate');
+  }
   return (
     // <div className=''>HomePage</div>
     <div>
@@ -27,7 +33,7 @@ const HomePage = () => {
             AI.
           </p>
           <div className="flex items-center justify-center space-x-4 mb-12">
-            <button class="cssbuttons-io-button">
+            <button class="cssbuttons-io-button" onClick={handleClick}>
               {" "}
               Get started
               <div className="icon">
@@ -45,17 +51,19 @@ const HomePage = () => {
                 </svg>
               </div>
             </button>
-            <button className="px-6 py-3 bg-transparent text-sky-500 border border-[#3a86ff] rounded hover:bg-sky-100 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+            <button onClick={()=>{ref.current?.scrollIntoView({behavior: 'smooth'});}} className="px-6 py-3 bg-transparent text-sky-500 border border-[#3a86ff] rounded hover:bg-sky-100 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
               Learn More
             </button>
           </div>
         </div>
       </div>
+      <div ref={ref}>
       <Captioning />
       <Generating />
       <Community />
       <Contact />
       <ScrollToTop />
+      </div>
     </div>
   );
 };
