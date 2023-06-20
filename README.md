@@ -12,7 +12,7 @@ Server: ExpressJS,MongoDB,Cloudinary,Flash-Python
 ML Models: Inception-V3 model for image feature extraction and LSTM model for caption generation
 
 # Demo
-Video Link: https://drive.google.com/file/d/1ZhnqFUocfJr-Vmpcz9MGh57fZGM2MP24/view?usp=sharing
+Video Link: https://drive.google.com/file/d/1miIchTyVKLjViYBgIJh4WxpC7wP7w8q7/view?usp=sharing
 
 ## Setup
 To run this project, install it locally using npm:
