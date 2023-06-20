@@ -11,8 +11,6 @@ cloudinary.config({
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET,
 });
-
-
 //Create a post
 router.route('/').post(async (req, res) => {
     try {
@@ -28,7 +26,5 @@ router.route('/').post(async (req, res) => {
         } catch (error) {
             res.status(500).json({ success: false, message: error });
         }
-
-
     });
 export default router
