@@ -1,15 +1,18 @@
 # SnapScribe
 SnapScribe | The ultimate image captioning and image generation tool powered by AI.
 
-![image](https://github.com/somyasubham9/SnapScribe/assets/77459972/8b935d38-9a74-4870-85db-58a27a07dc2e)
 
-![image](https://github.com/somyasubham9/SnapScribe/assets/77459972/02bad16d-81c7-4123-b314-7635182f562f)
+![SnapScribeHome](https://github.com/somyasubham9/SnapScribe/assets/77459972/e43da0e3-7401-4582-b4d5-f4ff0873881c)
+
+Features:
+
+![SnapScribeFeat](https://github.com/somyasubham9/SnapScribe/assets/77459972/faa0feb7-1a1c-4477-b15d-c450b6ae4d94)
 
 
 # TechStack Used :
 Client: ReactJS,TailwindCSS,React-Router
 
-Server: ExpressJS,MongoDB,Cloudinary,Flash-Python
+Server: ExpressJS,MongoDB,Cloudinary,Flask-Python
 
 ML Models: Inception-V3 model for image feature extraction and LSTM model for caption generation
 
